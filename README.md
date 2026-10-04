@@ -47,6 +47,33 @@ python3 example.py
 | `size` | string | Exact-matches only: pixel size shown ("426x320"). |
 | `exact_match` | boolean | Whether the exact-matches tab was read. |
 
+## Node.js
+
+Node 18 or newer, no dependencies. See [`example.mjs`](example.mjs):
+
+```bash
+export QD_API_KEY=qd_live_...
+node example.mjs https://www.gstatic.com/webp/gallery/1.jpg
+```
+
+Pass the URL of the image file itself, not of a page that shows it.
+
+## Sample response
+
+A real run from 4 October 2026 on `https://www.gstatic.com/webp/gallery/1.jpg`: 10 matches delivered. The rows arrive in `payload.results`; one is shown here and the full capture is in [`sample-response.json`](sample-response.json).
+
+```json
+{
+  "rank": 1,
+  "title": "10 1WRHKHS ideas love wallpaper backgrounds, whatsapp pictures, h letter images",
+  "link": "https://www.pinterest.com/4cinsightstest/1wrhkhs/",
+  "source": "pinterest.com",
+  "domain": "pinterest.com",
+  "image": "https://i.pinimg.com/originals/d4/a6/30/d4a63031f57bdcafb86ca02100fdd6d2.jpg",
+  "description": "Aerial View of a Valley with Mountains and Water You can do anything, Social media schedule, Winter fun"
+}
+```
+
 ## Pricing
 
 **$0.002 per delivered match** ($2 per 1,000). A run that delivers nothing costs nothing, and failed rows are never billed. The $2/month free allowance covers roughly 1,000 matchs — no card required.
